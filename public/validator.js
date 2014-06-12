@@ -359,6 +359,7 @@
 
 						var valid;
 
+						var origSelector = options.selector;
 						options.selector = options.selector || this;
 
 						valid = validations.validate(options);
@@ -370,6 +371,8 @@
 						if (options.done) {
 							options.done(valid);
 						}
+						
+						options.selector = origSelector;
 
 					});
 
